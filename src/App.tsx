@@ -1,9 +1,10 @@
 import SavingCard from './components/SavingCard';
+import Navbar from './components/Navbar';
 
 export default function App() {
   return (
     <>
-      <h1>Welcome to the Origin THA</h1>
+      <Navbar />
       <SavingCard />
     </>
   );
