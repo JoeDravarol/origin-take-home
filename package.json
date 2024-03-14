@@ -11,8 +11,11 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@fontsource/rubik": "^5.0.19",
+    "@fontsource/work-sans": "^5.0.17",
     "date-fns": "^3.4.0",
     "react": "^18.2.0",
+    "react-currency-input-field": "^3.8.0",
     "react-dom": "^18.2.0",
     "styled-components": "^6.1.8"
   },

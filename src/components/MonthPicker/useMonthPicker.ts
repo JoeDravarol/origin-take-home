@@ -2,6 +2,8 @@ import React from 'react';
 import { addMonths } from 'date-fns/addMonths';
 import { isFuture } from 'date-fns/isFuture';
 import { isSameMonth } from 'date-fns/isSameMonth';
+import { format } from 'date-fns/format';
+import { differenceInCalendarMonths } from 'date-fns/differenceInCalendarMonths';
 
 const useMonthPicker = (initialDate = new Date()) => {
   const [reachDate, setReachDate] = React.useState(initialDate);
@@ -38,11 +40,22 @@ const useMonthPicker = (initialDate = new Date()) => {
     }
   };
 
+  const getTotalMonthToDeposit = () => {
+    return differenceInCalendarMonths(reachDate, initialDate);
+  };
+
+  const getDateInStringFormat = () => {
+    // March 2024
+    return format(reachDate, 'LLLL yyyy');
+  };
+
   return {
     reachDate,
     getPrevMonth,
     getNextMonth,
     handleKeyDown,
+    getTotalMonthToDeposit,
+    getDateInStringFormat,
   };
 };
 

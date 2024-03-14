@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import SavingCard from './components/SavingCard';
 import Navbar from './components/Navbar';
 
+import { QUERIES } from './constants';
+
 export default function App() {
   return (
     <>
@@ -21,15 +23,19 @@ export default function App() {
 
 const Container = styled.article`
   margin-block: 1.5rem;
+
+  @media ${QUERIES.laptopAndUp} {
+    margin-top: 3rem;
+  }
 `;
 
 const Heading = styled.h2`
   font-size: 1.125rem;
-  color: #1b31a8;
-  font-weight: normal;
+  color: var(--color-accent);
+  font-weight: var(--font-weight-normal);
   text-align: center;
 `;
 
 const HeadingBold = styled.span`
-  font-weight: bold;
+  font-weight: var(--font-weight-bold);
 `;
