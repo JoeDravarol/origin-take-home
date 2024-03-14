@@ -5,6 +5,7 @@ import { format } from 'date-fns/format';
 import ChevronLeft from '../../assets/icons/chevron-left.svg?react';
 import ChevronRight from '../../assets/icons/chevron-right.svg?react';
 import { QUERIES } from '../../constants';
+import VisuallyHidden from '../VisuallyHidden';
 
 type MonthPickerProps = {
   label: string;
@@ -21,19 +22,27 @@ const MonthPicker = ({
   handleNextMonth,
   handleKeyDown,
 }: MonthPickerProps) => {
+  const selectedMonth = format(reachDate, 'LLLL');
+  const selectedYear = format(reachDate, 'yyyy');
+
   return (
     <div>
       <Label>{label}</Label>
       <Wrapper tabIndex={-1} onKeyDown={handleKeyDown}>
         <Button onClick={handlePrevMonth}>
+          <VisuallyHidden>previous month</VisuallyHidden>
           <ChevronLeft />
         </Button>
         {/* TODO: Improve UX by allowing user to click then select month & year */}
         <DateContainer>
-          <Month>{format(reachDate, 'LLLL')}</Month>
-          <Year>{format(reachDate, 'yyyy')}</Year>
+          <VisuallyHidden aria-live="assertive" aria-label="selected month">
+            {selectedMonth} {selectedYear}
+          </VisuallyHidden>
+          <Month aria-hidden="true">{selectedMonth}</Month>
+          <Year aria-hidden="true">{selectedYear}</Year>
         </DateContainer>
         <Button onClick={handleNextMonth}>
+          <VisuallyHidden>next month</VisuallyHidden>
           <ChevronRight />
         </Button>
       </Wrapper>
