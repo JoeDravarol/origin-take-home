@@ -4,15 +4,20 @@ import { render, screen } from '@testing-library/react';
 import App from './App';
 
 describe('App', () => {
-  it('Renders Welcome to the Origin THA', () => {
+  it('Renders saving goal simulator', () => {
     // ARRANGE
     render(<App />);
     // ACT
     // ASSERT
     expect(
       screen.getByRole('heading', {
-        level: 1,
+        level: 2,
       })
-    ).toHaveTextContent('Welcome to the Origin THA');
+    ).toHaveTextContent('saving goal');
+    expect(
+      screen.getByRole('heading', {
+        level: 3,
+      })
+    ).toHaveTextContent('Buy a house');
   });
 });
