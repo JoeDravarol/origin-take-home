@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-import HouseIcon from '../assets/icons/buy-a-house.svg?react';
+import HouseIcon from '../../assets/icons/buy-a-house.svg?react';
 
-import MonthPicker, { useMonthPicker } from './MonthPicker';
-import CurrencyInput, { useCurrencyInput } from './CurrencyInput';
-import MonthlyAmountInfo from './MonthlyAmountInfo';
-import { QUERIES } from '../constants';
+import MonthPicker, { useMonthPicker } from '../MonthPicker';
+import CurrencyInput, { useCurrencyInput } from '../CurrencyInput';
+import MonthlyAmountInfo from '../MonthlyAmountInfo';
+import { QUERIES } from '../../constants';
 
 const SavingCard = () => {
   const { amount, formattedAmount, handleAmountChange } = useCurrencyInput();
