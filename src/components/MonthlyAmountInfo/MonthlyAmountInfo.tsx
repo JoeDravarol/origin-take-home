@@ -19,11 +19,13 @@ const MonthlyAmountInfo = ({
     <Wrapper>
       <Header>
         <MonthlyAmountLabel>Monthly amount</MonthlyAmountLabel>
-        <MonthlyAmount>${monthlyAmount}</MonthlyAmount>
+        <MonthlyAmount aria-label="monthly amount">
+          ${monthlyAmount}
+        </MonthlyAmount>
       </Header>
 
       <Footer>
-        <Paragraph>
+        <Paragraph aria-label="monthly saving summary">
           You're planning <Bold>{totalMonthToDeposit} monthly deposits</Bold> to
           reach your <Bold>${savingGoal}</Bold> goal by{' '}
           <Bold>{reachGoalDate}.</Bold>
